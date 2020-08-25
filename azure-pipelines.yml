@@ -7,9 +7,9 @@ steps:
     inputs:
       command: 'custom'
       customcommand: 'install --production'
-      script: 'npm audit fix'
-      displayName: 'Fixing NPM versions'
-      continueOnError: true 
+  - script: 'npm audit fix'
+    displayName: 'Fixing NPM versions'
+    continueOnError: true    
   - script: 'npm test'
     displayName: 'Run unit tests'
     continueOnError: true
@@ -38,3 +38,4 @@ steps:
       TargetFolder: $(build.artifactstagingdirectory)/Templates
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
+    
